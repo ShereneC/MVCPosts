@@ -14,6 +14,11 @@ class PostService {
     let posts = [...Store.State.posts, newPost]
     Store.commit("posts", posts)
   }
+
+  delete(id) {
+    let postIndex = Store.State.posts.findIndex(post => post.id == id)
+    Store.State.posts.splice(postIndex, 1);
+  }
 }
 
 const service = new PostService();

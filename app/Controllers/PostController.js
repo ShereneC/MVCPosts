@@ -29,4 +29,9 @@ export default class PostController {
     formData.reset()
     _draw();
   }
+
+  delete(id) {
+    PostService.delete(id);
+    _draw();
+  }
 }

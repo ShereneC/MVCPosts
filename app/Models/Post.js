@@ -1,6 +1,7 @@
 export default class Post {
   constructor(data) {
-    this.body = data.body
+    this.id = data.id || generateId();
+    this.body = data.body;
     this.date = data.date || new Date().toLocaleDateString("en-Us");
   }
 
@@ -11,7 +12,12 @@ export default class Post {
     <p>
       ${this.body}
     </p>
+    <button onclick="app.postController.delete(${this.id})">Delete</button>
   </div>
     `
   }
+}
+
+function generateId() {
+  return Math.floor(Math.random() * 10000);
 }
