@@ -1,3 +1,5 @@
+// it is the job of the controller to manipulate the DOM
+
 import PostService from "../Services/PostService.js"
 import store from "../store.js";
 //Private
@@ -16,10 +18,15 @@ export default class PostController {
     console.log("Building Controller");
     _draw();
   }
-  createPost() {
+  createPost(event) {
+    event.preventDefault();
+    let formData = event.target;
     // debugger;
-    console.log("Creating Post");
-    PostService.createPost();
+    let rawPost = {
+      body: formData.body.value
+    };
+    PostService.createPost(rawPost);
+    formData.reset()
     _draw();
   }
 }

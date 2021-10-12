@@ -1,7 +1,7 @@
 export default class Post {
-  constructor(body) {
-    this.body = body
-    this.date = new Date().toLocaleDateString("en-Us");
+  constructor(data) {
+    this.body = data.body
+    this.date = data.date || new Date().toLocaleDateString("en-Us");
   }
 
   get Template() {

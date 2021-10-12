@@ -7,9 +7,9 @@ class PostService {
     console.log("creating service");
   }
 
-  createPost() {
+  createPost(rawData) {
     console.log("creating post from the service")
-    let newPost = new Post("new Post")
+    let newPost = new Post(rawData)
     // Store.State.posts.push(post);  DO not directly change the store
     let posts = [...Store.State.posts, newPost]
     Store.commit("posts", posts)

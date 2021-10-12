@@ -10,7 +10,10 @@
 </head>
 
 <body>
-  <button onclick="app.postController.createPost()">Create Post</button>
+  <form onsubmit="app.postController.createPost(event)">
+    <input type="text" name="body" placeholder="Your Post Here..." required />
+    <button type="submit">Create Post</button>
+  </form>
   <div id="posts"></div>
   <script src="app/main.js" type="module"></script>
 </body>
