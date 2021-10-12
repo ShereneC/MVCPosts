@@ -1,4 +1,6 @@
-let _state = {};
+let _state = {
+  posts: []
+};
 
 class Store {
   get State() {
